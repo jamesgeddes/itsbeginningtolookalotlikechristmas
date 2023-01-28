@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-import pytest
 from os import getenv
 import spotify
 import vars

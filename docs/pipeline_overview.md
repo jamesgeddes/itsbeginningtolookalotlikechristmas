@@ -1,29 +1,43 @@
 This project keeps to a strict CI and CD methodology to ensure efficient development. The two
 are kept distinct to ensure separation of concerns.
 
-## Continuous Integration: CircleCI
+## Continuous Integration
+
+### CircleCI
 
 Configuration is in the [.circleci](../.circleci) directory.
 
-On new push to main,
+On new push to `main:static`,
+
+- Build artifacts
+    - Zip HTML code
+- Publish artifacts
+    - HTML ZIP to Artifactory
+
+On new push to `main:src`
 
 - Lint Python, [Black](https://black.readthedocs.io/en/stable/)
 - Test Python
-- Test Terraform
 - Code security scan in [Snyk](https://snyk.io/)
 - Code smells scan in [SonarCloud](https://sonarcloud.io/)
 - Build artifacts
-    - Terraform plan
     - Container for Python code
-    - Zip for HTML code
+- Publish artifacts
+    - Container to Dockerhub
 
-If all the above succeeds, create GitHub release.
+## Continuous Deployment
 
-## Continuous Deployment: Harness
+### Terraform cloud
+
+Configuration is in the [terraform](../terraform) directory.
+
+On new push to `main:terraform`, plan and apply infrastructure changes.
+
+### Harness
 
 Configuration is in the [.harness](../.harness) directory.
 
-On new GitHub release,
+On new container in dockerhub
 
 - Execute Terraform plan
 - Deploy HTML files to bucket

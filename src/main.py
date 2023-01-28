@@ -1,12 +1,8 @@
-from src.get_spotify.spotify import get_popularity
+from src.spotify import get_popularity
 from dotenv import load_dotenv
 from os import getenv
 from datetime import datetime
 from aws import s3_upload_file, s3_download_file
-import logging
-import boto3
-from botocore.exceptions import ClientError
-import os
 import vars
 
 load_dotenv()
