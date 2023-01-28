@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "public_bucket" {
 
 resource "aws_s3_bucket_website_configuration" "site" {
   bucket         = aws_s3_bucket.public_bucket.bucket
-  website_domain = aws_route53_zone.primary.name
+  website_domain = var.service_domain
 
   index_document {
     suffix = "index.html"

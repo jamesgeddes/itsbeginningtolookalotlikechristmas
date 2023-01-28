@@ -9,7 +9,7 @@ resource "aws_route53_record" "root" {
 
   alias {
     evaluate_target_health = false
-    name                   = aws_s3_bucket.public_bucket.website_endpoint
+    name                   = aws_s3_bucket_website_configuration.site.website_domain
     zone_id                = aws_s3_bucket.public_bucket.hosted_zone_id
   }
 }
