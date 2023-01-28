@@ -8,3 +8,7 @@ provider "aws" {
     }
   }
 }
+
+provider "dockerhub" {
+
+}

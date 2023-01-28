@@ -6,6 +6,12 @@ terraform {
       source  = "hashicorp/aws"
       version = "~>4.51.0"
     }
+
+    dockerhub = {
+      source  = "BarnabyShearer/dockerhub"
+      version = "~> 0.0.15"
+    }
+
   }
 
   cloud {
