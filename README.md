@@ -110,11 +110,26 @@ It should be noted that this project is intended as a MVP.
 <!--- REQUIRED -->
 <!--- Explain what the thing does. Use screenshots or videos. -->
 
-### Web
-
 Simply head to [ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas).
 
 ### Self Host
+
+If you want to build this in your own environment, perhaps on your favourite song,
+
+1. Create accounts, fork & customise<br />
+   Create accounts with AWS, Terraform, CircleCI and Harness. Change all variables to your own
+   values.
+2. Run Terraform<br />
+   This gets the infrastructure in place.
+3. Run CI - CircleCI<br />
+   This builds the containers.
+4. Run CD - Harness<br />
+   This deploys the contains to AWS Lambda and the frontend HTML to S3.
+5. Marvel in awe and wonder at your silly new thing<br />
+   Your song tracker is now available at the domain you specified!
+
+After manually running each pipeline the first time, subsequent runs will be triggered on commit
+to main.
 
 <!-- Extra sections -->
 <!--- OPTIONAL -->
