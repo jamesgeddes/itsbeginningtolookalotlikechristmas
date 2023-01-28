@@ -68,7 +68,7 @@ Lot Like Christmas".
 ### How it works
 
 [ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas) works by
-polling the Spotify API every hour to get the popularity of track ID
+polling the Spotify API every day to get the popularity of track ID
 `2pXpURmn6zC5ZYDMms6fwa`. We then timestamp
 this and chuck it at a pretty graph. Grab some Eggnog and watch Christmas cheer gradually spread
 throughout the land.
