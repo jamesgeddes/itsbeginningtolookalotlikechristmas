@@ -33,27 +33,3 @@ variable "org_name" {
   type        = string
   default     = "jamesgeddes"
 }
-
-variable "dockerhub_username" {
-  description = "The dockerhub account username - set the DOCKER_USERNAME environment variable"
-  type        = string
-  default     = ""
-}
-
-variable "dockerhub_password" {
-  description = "The dockerhub account password - set the DOCKER_PASSWORD environment variable"
-  type        = string
-  default     = ""
-}
-
-variable "aws_access_key" {
-  description = "The access key of the AWS IAM user - set the AWS_ACCESS_KEY_ID environment variable"
-  type        = string
-  default     = ""
-}
-
-variable "aws_secret_key" {
-  description = "The AWS IAM user secret key - set the AWS_SECRET_ACCESS_KEY envionrment variable"
-  type        = string
-  default     = ""
-}
