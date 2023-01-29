@@ -9,7 +9,6 @@ jobs:
           name: Set and persist variable
           command: |
             echo 'export TAG="0.1.${CIRCLE_BUILD_NUM}"' >> /home/circleci/.bashrc
-            echo 'export CONTAINER_NAME="jamesgeddes/itsbeginningtolookalotlikechristmas:$TAG" >> /home/circleci/.bashrc
             source /home/circleci/.bashrc
             echo $TAG
       - run:
@@ -23,13 +22,13 @@ jobs:
       - run:
           name: Build get-spotify-popularity container
           command: |
-            docker build -t $CONTAINER_NAME -f src/Dockerfile .
+            docker build -t jamesgeddes/itsbeginningtolookalotlikechristmas:$TAG -f src/Dockerfile .
       - deploy:
           name: Push image to Docker Hub
           background: true
           command: |
             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            docker push $CONTAINER_NAME
+            docker push jamesgeddes/itsbeginningtolookalotlikechristmas:$TAG
 
 
 workflows:
