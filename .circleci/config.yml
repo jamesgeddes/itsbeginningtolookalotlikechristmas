@@ -3,8 +3,10 @@ orbs:
   python: circleci/python@2.1.1
 jobs:
   test-build-publish:
+    executor: python/default
     steps:
       - checkout
+      - run: pip install -r src/requirements.txt
       - run:
           name: Set and persist variable
           command: |
