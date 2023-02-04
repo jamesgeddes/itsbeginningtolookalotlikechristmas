@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "public_bucket" {
-  bucket = "${var.service}-public"
+  bucket = var.service_domain
   tags = {
     Name        = "${var.service}-public"
     Environment = "prod"
