@@ -33,7 +33,8 @@ jobs:
 workflows:
   publish_container:
     jobs:
-      - build_container
+      - build_container:
+          context: SonarCloud
       - push_container:
           requires:
             - build_container
