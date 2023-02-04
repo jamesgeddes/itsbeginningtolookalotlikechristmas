@@ -9,7 +9,7 @@ orbs:
 
 
 jobs:
-  build_container:
+  build_scan_push:
     executor: docker/machine
     steps:
       - checkout
@@ -20,21 +20,13 @@ jobs:
           path: ./src
           docker-context: ./src
       - sonarcloud/scan
-
-  push_container:
-    executor: docker/machine
-    steps:
       - docker/push:
           image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
           tag: 0.1.$CIRCLE_BUILD_NUM
-          registry: docker.io
 
 
 workflows:
   publish_container:
     jobs:
-      - build_container:
+      - build_scan_push:
           context: SonarCloud
-      - push_container:
-          requires:
-            - build_container
