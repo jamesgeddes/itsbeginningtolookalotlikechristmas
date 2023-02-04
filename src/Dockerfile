@@ -1,7 +1,7 @@
 FROM amazon/aws-lambda-python:3.9
 
-COPY requirements.txt requirements.txt
-COPY spotify.py spotify_api.py
+COPY ./src .
+RUN pip3 install -r requirements.txt
 COPY main.py ${LAMBDA_TASK_ROOT}
 
-CMD [ "app.handler" ]
+CMD [ "python3", "main.py" ]
