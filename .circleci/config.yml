@@ -2,13 +2,18 @@ version: '2.1'
 orbs:
   docker: circleci/docker@2.2.0
   python: circleci/python@2.1.1
-
+  sonarcloud: sonarsource/sonarcloud@1.1.1
 workflows:
-  build-docker-image:
+  build-scan-publish:
     jobs:
-      - docker/publish:
+      - docker/build:
           image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
           tag: 0.1.$CIRCLE_BUILD_NUM
-          update-description: true
-          deploy: true
           path: ./src
+          docker-context: ./src
+          lint-dockerfile: true
+      - sonarcloud/scan:
+          context: sonarcloud
+      - docker/push:
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          tag: 0.1.$CIRCLE_BUILD_NUM
