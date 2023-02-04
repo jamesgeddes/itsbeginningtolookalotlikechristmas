@@ -1,42 +1,17 @@
-version: 2.1
+version: '2.1'
 orbs:
+  docker: circleci/docker@2.2.0
   python: circleci/python@2.1.1
-jobs:
-  test-build-publish:
-    executor: python/default
-    steps:
-      - checkout
-      - run: pip install -r src/requirements.txt
-      - run:
-          name: Set and persist variable
-          command: |
-            echo 'export TAG="0.1.${CIRCLE_BUILD_NUM}"' >> /home/circleci/.bashrc
-            source /home/circleci/.bashrc
-            echo $TAG
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            mkdir test-results
-            pytest --junitxml=test-results/junit.xml tests
-      - store_test_results:
-          path: test-results
-      - run:
-          name: Build get-spotify-popularity container
-          command: |
-            docker build -t jamesgeddes/itsbeginningtolookalotlikechristmas:$TAG -f src/Dockerfile .
-      - deploy:
-          name: Push image to Docker Hub
-          background: true
-          command: |
-            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            docker push jamesgeddes/itsbeginningtolookalotlikechristmas:$TAG
-
 
 workflows:
-  version: 2
-  main-web:
+  build-docker-image:
     jobs:
-      - test-build-publish:
-          context:
-            - org-global
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          tag: 0.1.$CIRCLE_BUILD_NUM
+          update-description: true
+          deploy: true
+          docker-username: $DOCKER_USERNAME
+          docker-password: $DOCKER_PASSWORD
+          registry: docker.io
+          path: ./src
