@@ -14,8 +14,8 @@ def main():
     # 1. Try to get data from S3 bucket - if nothing there then that's ok
     s3_download_file(
         bucket_name=variables.bucket_name,
-        file_key=variables.file_key,
-        file_name=variables.file_key,
+        file_key=variables.data_file_name,
+        file_name=variables.data_file_name,
     )
 
     # 2. Get popularity score from spotify
@@ -27,14 +27,14 @@ def main():
     timestamp_popularity = f"{datetime.now()}, {popularity}\n"
 
     # 3. Append popularity to data
-    with open(variables.file_key, "a") as file:
+    with open(variables.data_file_name, "a") as file:
         file.write(timestamp_popularity)
 
     # 4. Load data back to S3 bucket
     s3_upload_file(
-        file_name=variables.file_key,
+        file_name=variables.data_file_name,
         bucket=variables.bucket_name,
-        object_name=variables.file_key,
+        object_name=variables.data_file_name,
     )
 
     # 5. Cake
