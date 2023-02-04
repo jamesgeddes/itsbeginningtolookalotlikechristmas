@@ -12,3 +12,5 @@ workflows:
           update-description: true
           deploy: true
           path: ./src
+          context:
+            - global
