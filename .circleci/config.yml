@@ -38,4 +38,8 @@ workflows:
       - build_container
       - scan_container:
           context: sonarcloud
-      - push_container
+          requires:
+            - build_container
+      - push_container:
+          requires:
+            - scan_container
