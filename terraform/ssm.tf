@@ -1,4 +1,4 @@
-resource "aws_ssm_parameter" "bucket" {
+resource "aws_ssm_parameter" "bucket_name" {
   name  = "${var.service}-bucket-name"
   type  = "String"
   value = aws_s3_bucket.public_bucket.bucket
@@ -10,7 +10,7 @@ resource "aws_ssm_parameter" "song_id" {
   value = "2pXpURmn6zC5ZYDMms6fwa"
 }
 
-resource "aws_ssm_parameter" "data-file" {
+resource "aws_ssm_parameter" "data_file_name" {
   name  = "${var.service}-data-file"
   type  = "String"
   value = "${var.service}-data-file.csv"
