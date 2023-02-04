@@ -1,3 +1,4 @@
+---
 version: '2.1'
 
 orbs:
@@ -19,6 +20,7 @@ jobs:
           lint-dockerfile: true
 
   scan_container:
+    machine: true
     steps:
       - sonarcloud/scan
 
