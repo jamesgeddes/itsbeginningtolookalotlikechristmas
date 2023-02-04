@@ -16,7 +16,7 @@
 <!--- Badges -->
 <!--- OPTIONAL -->
 <!--- Must not have its own title -->
-[![CircleCI](https://img.shields.io/circleci/build/github/jamesgeddes/itsbeginningtolookalotlikechristmas/main?style=flat-square)](https://app.circleci.com/pipelines/github/jamesgeddes/itsbeginningtolookalotlikechristmas)
+[![jamesgeddes](https://circleci.com/gh/jamesgeddes/itsbeginningtolookalotlikechristmas.svg?style=svg)](https://app.circleci.com/pipelines/github/jamesgeddes/itsbeginningtolookalotlikechristmas)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=bugs)](https://sonarcloud.io/dashboard?id=030_n3dr)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=code_smells)](https://sonarcloud.io/dashboard?id=030_n3dr)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=030_n3dr)
