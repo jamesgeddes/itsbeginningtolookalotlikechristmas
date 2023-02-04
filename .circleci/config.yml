@@ -20,8 +20,7 @@ jobs:
 
   scan_container:
     steps:
-      - sonarcloud/scan:
-          context: sonarcloud
+      - sonarcloud/scan
 
   push_container:
     executor: docker/docker
@@ -36,5 +35,6 @@ workflows:
   publish_container:
     jobs:
       - build_container
-      - scan_container
+      - scan_container:
+          context: sonarcloud
       - push_container
