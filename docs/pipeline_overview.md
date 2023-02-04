@@ -23,7 +23,8 @@ On new push to `main:src`
 - Build artifacts
     - Container for Python code
 - Publish artifacts
-    - Container to Dockerhub
+    - Container
+      to [Dockerhub](https://hub.docker.com/repository/docker/jamesgeddes/itsbeginningtolookalotlikechristmas)
 
 ## Continuous Deployment
 
