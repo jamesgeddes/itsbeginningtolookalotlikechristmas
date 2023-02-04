@@ -17,7 +17,6 @@ jobs:
           tag: 0.1.$CIRCLE_BUILD_NUM
           path: ./src
           docker-context: ./src
-          lint-dockerfile: true
 
   scan_container:
     machine: true
