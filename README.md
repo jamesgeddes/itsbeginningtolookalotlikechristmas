@@ -16,7 +16,12 @@
 <!--- Badges -->
 <!--- OPTIONAL -->
 <!--- Must not have its own title -->
-
+[![CircleCI](https://img.shields.io/circleci/build/github/jamesgeddes/itsbeginningtolookalotlikechristmas/main?style=flat-square)](https://app.circleci.com/pipelines/github/jamesgeddes/itsbeginningtolookalotlikechristmas)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=bugs)](https://sonarcloud.io/dashboard?id=030_n3dr)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=code_smells)](https://sonarcloud.io/dashboard?id=030_n3dr)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=030_n3dr)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=security_rating)](https://sonarcloud.io/dashboard?id=030_n3dr)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=030_n3dr)
 
 <!--- Short description -->
 <!--- REQUIRED -->
@@ -30,7 +35,8 @@ Graphing Christmasyness over time
 <!--- OPTIONAL -->
 <!--- Must not have its own title -->
 <!--- A detailed description of the repo -->
-IBTLALLC graphs the onset of Christmas through the popularity of the Perry Como
+itsbeginningtolookalotlikechristmas graphs the onset of Christmas through the popularity of the
+Perry Como
 classic, "[It's Beginning to Look a Lot Like Christmas](https://youtu.be/KmddeUJJEuU)" over time.
 Where [IsItChristmas.com](https://isitchristmas.com) gives you a simple yes or no, each year at
 [ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas), tells you when
