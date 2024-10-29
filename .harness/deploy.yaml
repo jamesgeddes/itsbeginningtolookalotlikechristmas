@@ -1,6 +1,0 @@
-pipeline:
-  name: deploy
-  identifier: deploy
-  projectIdentifier: default_project
-  orgIdentifier: default
-  tags: {}

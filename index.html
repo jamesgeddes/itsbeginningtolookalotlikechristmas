@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Beginning To Look a Lot Like Christmas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Body and HTML setup for full viewport height and centering */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text content */
+        }
+
+        /* Chart container to center the chart horizontally */
+        #chart-container {
+            width: 100vw; /* Full viewport width */
+            height: 80vh; /* Slightly smaller than full height */
+            display: flex;
+            justify-content: center; /* Center the canvas horizontally */
+            align-items: center; /* Center the canvas vertically if needed */
+        }
+
+        /* Canvas takes up full container width and height */
+        #popularityChart {
+            width: 95%; /* Slightly smaller than container width */
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>It's Beginning To Look a Lot Like Christmas</h1>
+    <h2>Charting Christmasyness over Time</h2>
+
+    <!-- Centered chart container -->
+    <div id="chart-container">
+        <canvas id="popularityChart"></canvas>
+    </div>
+
+        <footer>
+        <a href="https://github.com/jamesgeddes/itsbeginningtolookalotlikechristmas" target="_blank">Learn more</a> |
+            Support: <a href="https://www.amazon.co.uk/hz/wishlist/ls/WS5TGJQ9K8BS?ref_=wl_share">gift</a> ~ <a href="https://share.octopus.energy/green-ash-413">Octopus Energy</a>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>

@@ -16,12 +16,7 @@
 <!--- Badges -->
 <!--- OPTIONAL -->
 <!--- Must not have its own title -->
-[![jamesgeddes](https://circleci.com/gh/jamesgeddes/itsbeginningtolookalotlikechristmas.svg?style=svg)](https://app.circleci.com/pipelines/github/jamesgeddes/itsbeginningtolookalotlikechristmas)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=bugs)](https://sonarcloud.io/dashboard?id=030_n3dr)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=code_smells)](https://sonarcloud.io/dashboard?id=030_n3dr)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=030_n3dr)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=security_rating)](https://sonarcloud.io/dashboard?id=030_n3dr)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=jamesgeddes_itsbeginningtolookalotlikechristmas&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=030_n3dr)
+
 
 <!--- Short description -->
 <!--- REQUIRED -->
@@ -38,9 +33,8 @@ Graphing Christmasyness over time
 itsbeginningtolookalotlikechristmas graphs the onset of Christmas through the popularity of the
 Perry Como
 classic, "[It's Beginning to Look a Lot Like Christmas](https://youtu.be/KmddeUJJEuU)" over time.
-Where [IsItChristmas.com](https://isitchristmas.com) gives you a simple yes or no, each year at
-[ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas), tells you when
-It's Beginning to Look a Lot Like Christmas.
+Where [IsItChristmas.com](https://isitchristmas.com) gives you a simple yes or no,
+[ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas) tells you whether It's Beginning to Look a Lot Like Christmas.
 
 ## Table of Contents
 
@@ -79,7 +73,13 @@ polling the Spotify API every day to get the popularity of track ID
 this and chuck it at a pretty graph. Grab some Eggnog and watch Christmas cheer gradually spread
 throughout the land.
 
+GitHub Actions is used to run the python script that gets the data. GitHub pages thin displays the page.
+This is not how one would likely want to structure the infrastructure for an enterprise application, but
+this works for now.
+
 ### Future improvements
+
+These could be added in the future. PRs welcome!
 
 - Local radio<br />
   In the future, other sources will be added to further improve accuracy. Local radio stations
@@ -102,14 +102,20 @@ The motivation for this project is that it is,
     - DevOps
     - Continuous Integration
     - Continuous Delivery - [read the CD Bible now](https://amzn.to/3Wxh2GE)
-
-It should be noted that this project is intended as a MVP.
+    - progress is better than perfection
+    - Maslow's Hammer
 
 ## Install
 
 <!--- Explain how to install the thing. -->
 <!--- OPTIONAL IF documentation repo -->
 <!--- ELSE REQUIRED -->
+
+If running locally, install the Python requirements
+
+```shell
+pip install -r src/requirements.txt
+```
 
 ## Usage
 
@@ -118,24 +124,6 @@ It should be noted that this project is intended as a MVP.
 
 Simply head to [ItsBeginningToLookALotLike.Christmas](http://ItsBeginningToLookALotLike.Christmas).
 
-### Self Host
-
-If you want to build this in your own environment, perhaps on your favourite song,
-
-1. Create accounts, fork & customise<br />
-   Create accounts with AWS, Terraform, CircleCI and Harness. Change all variables to your own
-   values.
-2. Run Terraform<br />
-   This gets the infrastructure in place.
-3. Run CI - CircleCI<br />
-   This builds the containers.
-4. Run CD - Harness<br />
-   This deploys the contains to AWS Lambda and the frontend HTML to S3.
-5. Marvel in awe and wonder at your silly new thing<br />
-   Your song tracker is now available at the domain you specified!
-
-After manually running each pipeline the first time, subsequent runs will be triggered on commit
-to main.
 
 <!-- Extra sections -->
 <!--- OPTIONAL -->
