@@ -3,7 +3,6 @@ name: Update CSV Daily
 on:
   schedule:
     - cron: "0 0 * * *"
-  workflow_dispatch:
 
 jobs:
   update_csv:
