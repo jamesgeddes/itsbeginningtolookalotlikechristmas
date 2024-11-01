@@ -9,9 +9,9 @@ async function fetchCSVData(url) {
         const popularity = [];
 
         lines.forEach(line => {
-            const [date, pop] = line.split(',').map(item => item && item.trim()); // Trim and handle empty values
-            if (date && pop !== undefined) { // Only push if both date and pop are defined
-                dates.push(date);
+            const [date, pop] = line.split(',').map(item => item && item.trim());
+            if (date && pop !== undefined) {
+                dates.push(date.split(' ')[0]);
                 popularity.push(parseFloat(pop));
             }
         });
@@ -39,13 +39,14 @@ async function renderChart() {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: { title: { display: true, text: 'Date' } },
                 y: { title: { display: true, text: 'Popularity' } }
             },
             plugins: {
-                // Plugin to set the background colour of the chart area
-                backgroundColor: '#000000'
+                backgroundColor: 'rgba(0, 0, 0, 0)'
             }
         }
     });
