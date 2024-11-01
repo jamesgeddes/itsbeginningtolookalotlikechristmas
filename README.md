@@ -73,7 +73,7 @@ polling the Spotify API every day to get the popularity of track ID
 this and chuck it at a pretty graph. Grab some Eggnog and watch Christmas cheer gradually spread
 throughout the land.
 
-GitHub Actions is used to run the python script that gets the data. GitHub pages thin displays the page.
+GitHub Actions is used to run the python script that gets the data. GitHub pages then displays the page.
 This is not how one would likely want to structure the infrastructure for an enterprise application, but
 this works for now.
 
