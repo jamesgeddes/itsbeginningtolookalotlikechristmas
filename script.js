@@ -42,7 +42,7 @@ async function renderChart() {
         data: {
             labels: xLabels,
             datasets: [{
-                label: 'Christmasyness',
+                label: 'Christmasyness %',
                 data: popularity,
                 borderColor: 'white',
                 fill: false,
@@ -59,12 +59,23 @@ async function renderChart() {
                     grid: { color: 'rgba(255, 255, 255, 0.2)' }
                 },
                 y: {
-                    title: { display: true, text: 'Christmasyness', color: 'white' },
+                    title: { display: true, text: 'Christmasyness %', color: 'white' },
                     ticks: { color: 'white' },
                     grid: { color: 'rgba(255, 255, 255, 0.2)' }
                 }
             },
             plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            return dates[index];
+                        },
+                        label: function(tooltipItem) {
+                            return `Christmasyness: ${tooltipItem.raw}%`;
+                        }
+                    }
+                },
                 backgroundColor: 'rgba(0, 0, 0, 0)'
             }
         }
