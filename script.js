@@ -18,8 +18,9 @@ async function fetchCSVData(url) {
                 dates.push(formattedDate);
                 popularity.push(parseFloat(pop));
 
-               
-                if (dateObj.getDay() === 1) {
+                if (dateObj.getMonth() === 11 && dateObj.getDate() === 25) {
+                    xLabels.push("Merry Christmas! 🎅🥳");
+                } else if (dateObj.getDay() === 1) {
                     xLabels.push(formattedDate);
                 } else {
                     xLabels.push('');
