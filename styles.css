@@ -16,9 +16,10 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to bottom, #E0F7FA, #FFF); /* Gradient background */
+    background: linear-gradient(to bottom, #03484f, #1e2627); /* Gradient background */
     color: #2E7D32;
     overflow: hidden;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 /* Title in a festive script font */
@@ -29,19 +30,24 @@ h1 {
     text-shadow: 2px 2px #E57373;
     margin: 5px 0;
 }
+h2 {
+    color: rgb(255, 255, 0);
+}
 
 p {
     font-size: 1.2em;
-    color: #2E7D32;
+    color: #7d7d2e;
     margin: 5px 0 10px;
 }
 
-/* Responsive chart container to fit viewport dynamically */
+/* Responsive chart container */
 #chart-container {
-    width: 95vw; /* Slightly smaller than full viewport width */
-    max-width: 2000px;
-    height: 75vh; /* Fixed height to prevent overflow */
-    background: rgba(255, 255, 255, 0.85);
+    width: 95vw; /* Full width */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport */
+    height: 25vh; /* Set a smaller height for the chart */
+    flex-grow: 1; /* Allow it to grow and take available space */
+    margin-bottom: 20px; /* Add margin to separate from footer */
+    background: rgba(36, 0, 0, 0.85);
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -57,11 +63,13 @@ p {
     padding: 0;
 }
 
-/* Footer styling with white text */
+/* Footer styling */
 footer {
+    position: relative; /* Change to relative */
     margin-top: 20px;
     font-size: 0.9em;
     color: #2E7D32;
+    padding: 10px; /* Add padding for better touch targets */
 }
 footer a {
     color: #B71C1C;
@@ -69,4 +77,19 @@ footer a {
 }
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    #chart-container {
+        height: 20vh; /* Further reduce height for smaller screens */
+    }
 }
